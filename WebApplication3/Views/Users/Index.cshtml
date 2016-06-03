@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebApplication3.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Friend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eduction)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Consumption)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoppingScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandscapeScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReligionScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HumanitiesScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistoricalSiteScore)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Friend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eduction)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Consumption)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShoppingScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LandscapeScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReligionScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HumanitiesScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HistoricalSiteScore)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+        </td>
+    </tr>
+}
+
+</table>

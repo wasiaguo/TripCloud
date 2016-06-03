@@ -1,0 +1,50 @@
+﻿<h2> 景點推薦 </h2>
+
+<h3>推薦適合的景點，並依照適合度排名</h3>
+<hr />
+
+@if (ViewBag.Start != null)
+{
+    <div id="POI_Table" class="form-group col-md-12 col-md-offset-2">
+        @for (int i = 1; i <= 20; i++)
+        {
+        <div class="col-md-6">
+            <div class="panel checked-panel">
+                <input type="checkbox" id="@i" name="poi">
+                <label for="@i" class="checked-heading panel-heading text-center ">
+                    排名 @i
+
+                </label>
+                <div class="panel-body ">
+                    <div class="col-md-4">
+                        <i class="fa fa-university fa-5x" aria-hidden="true"></i>
+                        <hr />
+                        <h4>景點名稱</h4>
+                    </div>
+                    <div class="col-md-8">
+                        類型:<br>
+                        地址:<br>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="col-md-12 ">
+        <input name="action" onclick="location.href='@Url.Action("Index")'" value="送出" type="submit" class="btn btn-primary col-md-5 col-md-offset-4" formmethod="post">
+    </div>
+}
+
+
+
+@if (ViewBag.Start == null)
+{
+    <div class="form-group">
+
+        <input name="action" onclick="location.href='@Url.Action("StartPOIRecommend")'" value="開始推薦" type="submit" class="btn btn-primary col-md-5 col-md-offset-4" formmethod="post">
+
+    </div>
+}

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WebApplication3.User>
+
+<h1> 新增好友 </h1>
+
+
+<a id="show"></a>
+
+@using (Html.BeginForm("Create", "Friends"))
+{
+    @Html.TextBox("Account", null, new { @class = "btn-info" })
+    <input type="submit" value="搜尋" class="btn btn-default" />
+
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+
+
+            <td>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button class="btn btn-info" type="button" id="addfriendbtn"
+                                onclick="addfriend(@item.UserId)">加入</button>
+                    </div>
+                </div>
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+
+
+@section scripts{
+    <script>
+        function addfriend(friend_Id) {          
+            $.ajax({
+                type: 'POST',
+                url: '../Friends/addFriend/'+friend_Id,
+                data: friend_Id,
+                success:function(Jdata){
+                    if(JSON.stringify(Jdata==true))
+                    {
+                        alert("已送出");
+                        $('#addfriendbtn').empty();
+                        $('#addfriendbtn').removeClass();
+                        $('#addfriendbtn').addClass("btn btn-success disabled");
+                        $('#addfriendbtn').append("已送出");
+                        
+                    }
+                
+                },
+            });
+
+        }
+
+
+
+    </script>
+    
+    
+    
+    }

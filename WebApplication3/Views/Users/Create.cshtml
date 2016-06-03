@@ -1,0 +1,193 @@
+﻿@model  WebApplication3.Models.ViewModel.UserRegisterVM
+<link rel="stylesheet" href="~/Content/image_select/style.css" media="screen" type="text/css" />
+
+<h2>會員註冊</h2>
+
+@using (Html.BeginForm("Create","Users")) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" id="page1">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Account, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.user.Account, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.user.Account, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.user.Password, new { htmlAttributes = new { @type="password",@class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.user.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.user.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.user.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.user.Age, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.user.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Eduction, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 ">
+                    <label class="radio-inline col-md-2">
+                        <input type="radio" name="user.Eduction" id="Eduction_Radio1" value=0> 國中以下
+                    </label>
+                    <label class="radio-inline col-md-2">
+                        <input type="radio" name="user.Eduction" id="Eduction_Radio2" value=1> 高中畢業
+                    </label>
+                    <label class="radio-inline col-md-2">
+                        <input type="radio" name="user.Eduction" id="Eduction_Radio3" value=2> 大學(專)畢業
+                    </label>
+                    <label class="radio-inline col-md-2">
+                        <input type="radio" name="user.Eduction" id="Eduction_Radio4" value=3> 研究所畢業
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="user.Eduction" id="Eduction_Radio5" value=4> 研究所以上
+                    </label>
+                </div>
+            </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.user.Consumption, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <label class="radio-inline col-md-2">
+                    <input type="radio" name="user.Consumption" id="Consumption_Radio1" value=0> 免費
+                </label>
+                <label class="radio-inline col-md-2">
+                    <input type="radio" name="user.Consumption" id="Consumption_Radio2" value=1> 便宜
+                </label>
+                <label class="radio-inline col-md-2">
+                    <input type="radio" name="user.Consumption" id="Consumption_Radio3" value=2> 適中
+                </label>
+                <label class="radio-inline col-md-2">
+                    <input type="radio" name="user.Consumption" id="Consumption_Radio4" value=3> 昂貴
+                </label>
+                <label class="radio-inline col-md-2">
+                    <input type="radio" name="user.Consumption" id="Consumption_Radio5" value=4>  非常昂貴
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="hidden"  name="user.ShoppingScore" id="ShoppingScore" value=0>
+            <input type="hidden" name="user.LandscapeScore" id="LandscapeScore" value=0>
+            <input type="hidden" name="user.ReligionScore" id="ReligionScore" value=0>
+            <input type="hidden" name="user.HumanitiesScore" id="HumanitiesScore" value=0>
+            <input type="hidden" name="user.fdHistoricalSiteScore" id="HistoricalSiteScore" value=0>
+        </div>
+        <hr> 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-4">
+                    <input type="button" onclick="nextPage()" value="下一頁" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+}
+
+<div class="image-selector " id="page2">
+    <a class="btn btn-default" value="lastpage" onclick="lastPage()">上一頁</a>
+    <div class="clearfix">
+        <button class="select" value="全選"></button>
+        <h1>請從下列景點選出符合你喜好的景點</h1>
+        <button class="send" data-counter="0" onclick="send()">&#10004;</button>
+    </div>
+
+    <div class="col-md-10 text-center">
+        <h2 id="show"></h2>
+    </div>
+
+    <div style="text-align:center;clear:both">
+    </div>
+    <div>
+        <ul>
+            @foreach (var poi in Model.ShoppingPOIs)
+            {
+                <li>@poi.POIName<img class="@poi.type" src="@poi.ImgUrl" /></li>
+            }
+
+            @foreach (var poi in Model.LandscapePOIs)
+            {
+                <li>@poi.POIName<img class="@poi.type" src="@poi.ImgUrl" /></li>
+            }
+
+            @foreach (var poi in Model.ReligionPOIs)
+            {
+                <li>@poi.POIName<img class="@poi.type" src="@poi.ImgUrl" /></li>
+            }
+
+            @foreach (var poi in Model.HumanitiesPOIs)
+            {
+                <li>@poi.POIName<img class="@poi.type" src="@poi.ImgUrl" /></li>
+            }
+
+            @foreach (var poi in Model.HistoricalSitePOIs)
+            {
+                <li>@poi.POIName<img class="@poi.type" src="@poi.ImgUrl" /></li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+@section scripts{
+<script src="~/Scripts/image_select/image_select.js"></script>
+<script>
+    $('#page2').hide();
+
+function nextPage() {
+
+        $('#page1').hide();
+        $('#page2').slideDown();
+
+}
+
+function lastPage() {
+
+    $('#page2').hide();
+    $('#page1').slideDown();
+
+}
+
+function send() {
+
+
+    var all = $('li.selected ').length;
+    var shopping_score = $('li.selected .Shopping').length * 100 / all;
+    var landscape_score = $('li.selected .Landscape').length * 100 / all;
+    var religion_score = $('li.selected .Religion').length * 100 / all;
+    var humanities_score = $('li.selected .Humanities').length * 100 / all;
+    var historical_score = $('li.selected .HistoricalSite').length * 100 / all;
+
+
+    $('#ShoppingScore').attr("value", shopping_score);
+    $('#LandscapeScore').attr("value", landscape_score);
+    $('#ReligionScore').attr("value", religion_score);
+    $('#HumanitiesScore').attr("value", humanities_score);
+    $('#HistoricalSiteScore').attr("value", historical_score);
+    alert("註冊完成");
+    $('form').submit();
+
+}
+
+
+
+
+
+</script>
+    
+     
+    
+}

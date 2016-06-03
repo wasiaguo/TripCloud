@@ -1,0 +1,60 @@
+﻿@model WebApplication3.Dinary
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dinary</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weather)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weather)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.write)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.write)
+        </dd>
+
+ 
+
+        <dt>
+            @Html.DisplayNameFor(model => model.picture)
+        </dt>
+
+        <dd>
+            <img src="@Url.Action("GetImage", "Dinaries", new { id = Model.DinaryId })"alt=""/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DinaryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

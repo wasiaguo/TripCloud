@@ -1,0 +1,71 @@
+﻿<link rel="stylesheet" href="~/Content/image_select/style.css" media="screen" type="text/css" />
+
+
+
+<div class="image-selector " id="page2">
+    <div class="clearfix">
+        <button class="select" value="全選"></button>
+        <h1>請挑選下列你感興趣的景點</h1>
+        <button class="send" data-counter="0" onclick="send()">&#10004;</button>
+    </div>
+
+    <div class="col-md-10 text-center">
+        <h2 id="show"></h2>
+    </div>
+
+    <div style="text-align:center;clear:both">
+    </div>
+    <div>
+        <ul>
+
+            @for (int i = 1; i < 5; i++)
+            {
+                <li>景點 @i<img class="A" src="#.jpg" /></li>
+            }
+            @for (int i = 5; i < 10; i++)
+            {
+                <li>景點 @i<img class="B" src="#.jpg" /></li>
+            }
+            @for (int i = 10; i < 15; i++)
+            {
+                <li>景點 @i<img class="C" src="#.jpg" /></li>
+            }
+            @for (int i = 15; i < 20; i++)
+            {
+                <li>景點 @i<img class="D" src="#.jpg" /></li>
+            }
+            @for (int i = 20; i < 25; i++)
+            {
+                <li>景點 @i<img class="E" src="#.jpg" /></li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script src="~/Scripts/image_select/image_select.js"></script>
+    
+    <script>
+        function send()
+        {
+            var all = $('li.selected ').length;
+            var A = $('li.selected .A').length *100/all;
+            var B = $('li.selected .B').length * 100 / all;
+            var C = $('li.selected .C').length * 100 / all;
+            var D = $('li.selected .D').length * 100 / all;
+            var E = $('li.selected .E').length * 100 / all;
+
+            var str = 'A:' + A + '<br>B:' + B + '<br>C:' + C + '<br>D:' + D + '<br>E:' + E;
+            $('#show').empty();
+            $('#show').append(str);
+
+        }
+
+
+    </script>
+}
+
+
+

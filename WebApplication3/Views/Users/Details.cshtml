@@ -1,0 +1,114 @@
+﻿@model WebApplication3.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Friend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Friend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eduction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eduction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consumption)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consumption)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShoppingScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoppingScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LandscapeScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LandscapeScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReligionScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReligionScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HumanitiesScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HumanitiesScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoricalSiteScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HistoricalSiteScore)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CloudTripModelStoreContainer" CdmEntityContainer="CloudTripEntities4">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="CloudTripModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="CloudTripModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="CloudTripModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="CloudTripModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CloudTripModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="CloudTripModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CloudTripModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="CloudTripModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="CloudTripModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="CommonPictures">
+      <EntityTypeMapping TypeName="CloudTripModel.CommonPictures">
+        <MappingFragment StoreEntitySet="CommonPictures">
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="PictureName" ColumnName="PictureName" />
+          <ScalarProperty Name="CommonPicId" ColumnName="CommonPicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dinary">
+      <EntityTypeMapping TypeName="CloudTripModel.Dinary">
+        <MappingFragment StoreEntitySet="Dinary">
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="FbName" ColumnName="FbName" />
+          <ScalarProperty Name="picturetype" ColumnName="picturetype" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="write" ColumnName="write" />
+          <ScalarProperty Name="weather" ColumnName="weather" />
+          <ScalarProperty Name="mood" ColumnName="mood" />
+          <ScalarProperty Name="DinaryId" ColumnName="DinaryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Footmap">
+      <EntityTypeMapping TypeName="CloudTripModel.Footmap">
+        <MappingFragment StoreEntitySet="Footmap">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="map" ColumnName="map" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="FootmapId" ColumnName="FootmapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group">
+      <EntityTypeMapping TypeName="CloudTripModel.Group">
+        <MappingFragment StoreEntitySet="Group">
+          <ScalarProperty Name="HistoricalSite" ColumnName="HistoricalSite" />
+          <ScalarProperty Name="Humanities" ColumnName="Humanities" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Landscape" ColumnName="Landscape" />
+          <ScalarProperty Name="Shopping" ColumnName="Shopping" />
+          <ScalarProperty Name="Consumption" ColumnName="Consumption" />
+          <ScalarProperty Name="Eduction" ColumnName="Eduction" />
+          <ScalarProperty Name="TripId" ColumnName="TripId" />
+          <ScalarProperty Name="Mangement" ColumnName="Mangement" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Picture">
+      <EntityTypeMapping TypeName="CloudTripModel.Picture">
+        <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="FootmapId" ColumnName="FootmapId" />
+          <ScalarProperty Name="takeTime" ColumnName="takeTime" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Road">
+      <EntityTypeMapping TypeName="CloudTripModel.Road">
+        <MappingFragment StoreEntitySet="Road">
+          <ScalarProperty Name="Roaded" ColumnName="Roaded" />
+          <ScalarProperty Name="SpendTime" ColumnName="SpendTime" />
+          <ScalarProperty Name="Getoff" ColumnName="Getoff" />
+          <ScalarProperty Name="Setoff" ColumnName="Setoff" />
+          <ScalarProperty Name="RoadId" ColumnName="RoadId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoadSitu">
+      <EntityTypeMapping TypeName="CloudTripModel.RoadSitu">
+        <MappingFragment StoreEntitySet="RoadSitu">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Ifcar" ColumnName="Ifcar" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Roadline" ColumnName="Roadline" />
+          <ScalarProperty Name="Placein" ColumnName="Placein" />
+          <ScalarProperty Name="RoadSituId" ColumnName="RoadSituId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CloudTripModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trip">
+      <EntityTypeMapping TypeName="CloudTripModel.Trip">
+        <MappingFragment StoreEntitySet="Trip">
+          <ScalarProperty Name="RoadId" ColumnName="RoadId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Traffic" ColumnName="Traffic" />
+          <ScalarProperty Name="plane" ColumnName="plane" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="TripId" ColumnName="TripId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="CloudTripModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="HistoricalSiteScore" ColumnName="HistoricalSiteScore" />
+          <ScalarProperty Name="HumanitiesScore" ColumnName="HumanitiesScore" />
+          <ScalarProperty Name="ReligionScore" ColumnName="ReligionScore" />
+          <ScalarProperty Name="LandscapeScore" ColumnName="LandscapeScore" />
+          <ScalarProperty Name="ShoppingScore" ColumnName="ShoppingScore" />
+          <ScalarProperty Name="Consumption" ColumnName="Consumption" />
+          <ScalarProperty Name="Eduction" ColumnName="Eduction" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Friend" ColumnName="Friend" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View">
+      <EntityTypeMapping TypeName="CloudTripModel.View">
+        <MappingFragment StoreEntitySet="View">
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Introduction" ColumnName="Introduction" />
+          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+          <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Belong" TypeName="CloudTripModel.Belong" StoreEntitySet="Belong">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="Group">
+        <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Have" TypeName="CloudTripModel.Have" StoreEntitySet="Have">
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="CommonPictures">
+        <ScalarProperty Name="CommonPicId" ColumnName="CommonPicId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PictureIn" TypeName="CloudTripModel.PictureIn" StoreEntitySet="PictureIn">
+      <EndProperty Name="Picture">
+        <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+      </EndProperty>
+      <EndProperty Name="CommonPictures">
+        <ScalarProperty Name="CommonPicId" ColumnName="CommonPicId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RoadIn" TypeName="CloudTripModel.RoadIn" StoreEntitySet="RoadIn">
+      <EndProperty Name="Road">
+        <ScalarProperty Name="RoadId" ColumnName="RoadId" />
+      </EndProperty>
+      <EndProperty Name="Footmap">
+        <ScalarProperty Name="FootmapId" ColumnName="FootmapId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SearchPicture" TypeName="CloudTripModel.SearchPicture" StoreEntitySet="SearchPicture">
+      <EndProperty Name="Picture">
+        <ScalarProperty Name="PictureId" ColumnName="PictureId" />
+      </EndProperty>
+      <EndProperty Name="Footmap">
+        <ScalarProperty Name="FootmapId" ColumnName="FootmapId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SearchView" TypeName="CloudTripModel.SearchView" StoreEntitySet="SearchView">
+      <EndProperty Name="View">
+        <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+      </EndProperty>
+      <EndProperty Name="Road">
+        <ScalarProperty Name="RoadId" ColumnName="RoadId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SeeView" TypeName="CloudTripModel.SeeView" StoreEntitySet="SeeView">
+      <EndProperty Name="View">
+        <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+      </EndProperty>
+      <EndProperty Name="Trip">
+        <ScalarProperty Name="TripId" ColumnName="TripId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Friend">
+      <EntityTypeMapping TypeName="CloudTripModel.Friend">
+        <MappingFragment StoreEntitySet="Friend">
+          <ScalarProperty Name="Friendship" ColumnName="Friendship" />
+          <ScalarProperty Name="checkfreind" ColumnName="checkfreind" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FriendId" ColumnName="FriendId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

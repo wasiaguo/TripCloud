@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7a3c32cd254c498f8ab84b68e01d8997" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="CloudTripModel.CommonPictures" Width="1.5" PointX="0.75" PointY="9.875" />
+        <EntityTypeShape EntityType="CloudTripModel.Dinary" Width="1.5" PointX="5.25" PointY="9.375" />
+        <EntityTypeShape EntityType="CloudTripModel.Footmap" Width="1.5" PointX="5.25" PointY="13.125" />
+        <EntityTypeShape EntityType="CloudTripModel.Group" Width="1.5" PointX="12" PointY="16.25" />
+        <EntityTypeShape EntityType="CloudTripModel.Picture" Width="1.5" PointX="7.5" PointY="11.625" />
+        <EntityTypeShape EntityType="CloudTripModel.Road" Width="1.5" PointX="7.5" PointY="16.375" />
+        <EntityTypeShape EntityType="CloudTripModel.RoadSitu" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="CloudTripModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="CloudTripModel.Trip" Width="1.5" PointX="9.75" PointY="12.25" />
+        <EntityTypeShape EntityType="CloudTripModel.User" Width="1.5" PointX="3" PointY="8.5" />
+        <EntityTypeShape EntityType="CloudTripModel.View" Width="1.5" PointX="12" PointY="11.875" />
+        <AssociationConnector Association="CloudTripModel.FK_Dinary_User" />
+        <AssociationConnector Association="CloudTripModel.FK_Footmap_User" />
+        <AssociationConnector Association="CloudTripModel.FK_Picture_Footmap" />
+        <AssociationConnector Association="CloudTripModel.FK_Group_Trip" />
+        <AssociationConnector Association="CloudTripModel.FK_Trip_Road" />
+        <AssociationConnector Association="CloudTripModel.FK_RoadSitu_User" />
+        <AssociationConnector Association="CloudTripModel.FK_Trip_User" />
+        <AssociationConnector Association="CloudTripModel.Belong" />
+        <AssociationConnector Association="CloudTripModel.Have" />
+        <AssociationConnector Association="CloudTripModel.PictureIn" />
+        <AssociationConnector Association="CloudTripModel.RoadIn" />
+        <AssociationConnector Association="CloudTripModel.SearchPicture" />
+        <AssociationConnector Association="CloudTripModel.SearchView" />
+        <AssociationConnector Association="CloudTripModel.SeeView" />
+        <EntityTypeShape EntityType="CloudTripModel.Friend" Width="1.5" PointX="5.25" PointY="17.125" />
+        <AssociationConnector Association="CloudTripModel.FK_Friend_User" />
+        <AssociationConnector Association="CloudTripModel.FK_Friend_User1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

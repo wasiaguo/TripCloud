@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication3.Friend>
+
+
+<h2>我的好友</h2>
+
+<p>
+    @Html.ActionLink("新增好友", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Account)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.checkfreind)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Account)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.checkfreind)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Friendship })
+        </td>
+    </tr>
+}
+
+</table>

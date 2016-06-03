@@ -1,0 +1,38 @@
+﻿<h2> 旅伴推薦 </h2>
+
+<h3>推薦適合與您一起出遊的好友，並依照適合度排名</h3>
+<hr/>
+<div class="form-group col-md-10 col-md-offset-2">
+    
+    @if (ViewBag.Start != null)
+    {
+        for (int i = 1; i <= 20; i++)
+        {
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading text-center">
+                        排名 @i
+
+                    </div>
+                    <div class="panel-body text-center">
+                        <i class="fa fa-user-plus fa-4x" aria-hidden="true"></i>
+                         <h6>好友名稱</h6>
+                        <input name="action" value="邀請" type="submit" class="btn btn-default">
+                    </div>
+                </div>
+            </div>
+        }
+
+        <input name="action" onclick="location.href='@Url.Action("Index")'" value="結束" type="submit" class="btn btn-primary col-md-5 col-md-offset-4" formmethod="post">
+    }
+
+</div>
+
+@if (ViewBag.Start == null)
+{
+<div class="form-group">
+
+    <input name="action" onclick="location.href='@Url.Action("StartFrienRecommend")'" value="開始推薦" type="submit" class="btn btn-primary col-md-5 col-md-offset-4" formmethod="post">
+
+</div>
+}
